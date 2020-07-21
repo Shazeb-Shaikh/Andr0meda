@@ -1,0 +1,66 @@
+/* CSS files add styling rules to your content */
+
+:root {
+  --background: #f8f8f8;
+  --dark: #303032;
+  --s: url(https://cdn.glitch.com/7c14f12f-a452-4632-a4e3-0bf5f60a4062%2F7BD1245F-A623-452B-826C-F84041DA517B.png?v=1595261921437);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+}
+
+.box {
+  position: relative;
+  background: var(--dark);
+  border: 0.25rem solid var(--dark);
+  height: 8rem;
+  width: 8rem;
+  outline: 0;
+  overflow: hidden;
+}
+
+.box::before {
+  content: "S";
+  color: white;
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -40%;
+  height: 200%;
+  width: 200%;
+  background: var(--background);
+  border-radius: 34%;
+  animation: spin 6s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100%) rotate(500deg);
+  }
+}
+.head {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  bottom: 50%;
+}
